@@ -20,6 +20,50 @@ body {
     background-color: #f3f3f3;
 
     color: #111;
+
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.skip-link {
+    position: absolute;
+
+    top: -60px;
+    left: 20px;
+
+    z-index: 9999;
+
+    background-color: white;
+
+    color: #003c71;
+
+    padding: 10px 16px;
+
+    border-radius: 4px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 20px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #fdb813;
+
+    outline-offset: 3px;
 }
 
 
@@ -50,14 +94,12 @@ body {
     padding: 25px 20px 30px;
 }
 
-
 .intel-logo {
     width: 60px;
     height: auto;
 
     margin-bottom: 14px;
 }
-
 
 .hero h1 {
     font-size: 30px;
@@ -67,7 +109,6 @@ body {
     font-weight: 700;
 }
 
-
 .hero-line {
     width: 56px;
     height: 3px;
@@ -76,7 +117,6 @@ body {
 
     margin: 10px 0 14px;
 }
-
 
 .hero p {
     max-width: 550px;
@@ -113,10 +153,6 @@ body {
 
     gap: 25px;
 
-    /*
-        Forces horizontal scrolling.
-        Cards total much wider than 1250px.
-    */
     overflow-x: scroll;
     overflow-y: hidden;
 
@@ -137,19 +173,6 @@ body {
 ========================= */
 
 .timeline-card {
-    /*
-        IMPORTANT:
-        Cards cannot shrink.
-
-        6 cards x 300px = 1800px
-        plus gaps.
-
-        Timeline max width = 1250px.
-
-        This guarantees horizontal
-        overflow and scrolling.
-    */
-
     flex: 0 0 300px;
 
     width: 300px;
@@ -168,13 +191,11 @@ body {
         box-shadow 0.3s ease;
 }
 
-
 .timeline-card:hover {
     transform: translateY(-8px);
 
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
 }
-
 
 .timeline-card h2 {
     color: #003c71;
@@ -183,7 +204,6 @@ body {
 
     margin-bottom: 8px;
 }
-
 
 .timeline-card h3 {
     color: #111;
@@ -209,7 +229,6 @@ body {
     overflow: hidden;
 }
 
-
 .image-container img {
     display: block;
 
@@ -220,7 +239,6 @@ body {
 
     transition: transform 0.4s ease;
 }
-
 
 .timeline-card:hover .image-container img {
     transform: scale(1.06);
@@ -251,7 +269,6 @@ body {
     transition: opacity 0.3s ease;
 }
 
-
 .card-details p {
     font-size: 14px;
 
@@ -259,7 +276,6 @@ body {
 
     text-align: left;
 }
-
 
 .timeline-card:hover .card-details {
     opacity: 1;
@@ -285,32 +301,21 @@ body {
    SCROLLBAR
 ========================= */
 
-/*
-    Firefox
-*/
-
 .timeline {
     scrollbar-width: auto;
 
     scrollbar-color: #0071c5 #d8d8d8;
 }
 
-
-/*
-    Chrome / Edge / Safari
-*/
-
 .timeline::-webkit-scrollbar {
     height: 12px;
 }
-
 
 .timeline::-webkit-scrollbar-track {
     background-color: #d8d8d8;
 
     border-radius: 20px;
 }
-
 
 .timeline::-webkit-scrollbar-thumb {
     background-color: #0071c5;
@@ -320,9 +325,362 @@ body {
     border: 2px solid #d8d8d8;
 }
 
-
 .timeline::-webkit-scrollbar-thumb:hover {
     background-color: #005a9c;
+}
+
+
+/* =========================
+   SHARED SECTION HEADINGS
+========================= */
+
+.section-heading {
+    max-width: 700px;
+
+    margin: 0 auto 40px;
+
+    text-align: center;
+}
+
+.section-heading h2 {
+    color: #003c71;
+
+    font-size: 32px;
+
+    margin-bottom: 12px;
+
+    font-weight: 700;
+}
+
+.section-heading p {
+    color: #444;
+
+    line-height: 1.7;
+}
+
+.section-label {
+    color: #0071c5 !important;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   THREE COLUMN SECTION
+========================= */
+
+.impact-section {
+    background-color: white;
+
+    padding: 70px 20px;
+}
+
+.impact-card {
+    background-color: #f7f9fb;
+
+    border-top: 5px solid #0071c5;
+
+    padding: 30px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.13);
+}
+
+.impact-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #0071c5;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+.impact-card h3 {
+    color: #003c71;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+.impact-card p {
+    color: #333;
+
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+.learn-more {
+    color: #005a9c;
+
+    font-weight: 700;
+
+    text-decoration: none;
+}
+
+.learn-more:hover {
+    color: #003c71;
+
+    text-decoration: underline;
+}
+
+
+/* =========================
+   BOOTSTRAP ACCORDION
+========================= */
+
+.faq-section {
+    background-color: #eef5f9;
+
+    padding: 70px 20px;
+}
+
+.accordion {
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border-color: #c7d7e3;
+}
+
+.accordion-button {
+    color: #003c71;
+
+    font-weight: 700;
+
+    font-size: 16px;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #003c71;
+
+    background-color: #dcecf7;
+
+    box-shadow: none;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 113, 197, 0.25);
+}
+
+.accordion-body {
+    line-height: 1.7;
+}
+
+
+/* =========================
+   NEWSLETTER SECTION
+========================= */
+
+.newsletter-section {
+    background: linear-gradient(
+        120deg,
+        #003c71,
+        #0071c5
+    );
+
+    color: white;
+
+    padding: 70px 20px;
+}
+
+.newsletter-content {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.newsletter-label {
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    color: #9fe7f4;
+
+    margin-bottom: 8px;
+}
+
+.newsletter-text h2 {
+    font-size: 32px;
+
+    margin-bottom: 15px;
+
+    font-weight: 700;
+}
+
+.newsletter-text p {
+    line-height: 1.7;
+}
+
+.newsletter-form {
+    background-color: white;
+
+    color: #111;
+
+    padding: 30px;
+
+    border-radius: 6px;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-form .form-label {
+    font-weight: 700;
+}
+
+.subscribe-button {
+    background-color: #0071c5;
+
+    color: white;
+
+    border: 2px solid #0071c5;
+
+    font-weight: 700;
+
+    padding: 10px 24px;
+}
+
+.subscribe-button:hover {
+    background-color: #005a9c;
+
+    border-color: #005a9c;
+
+    color: white;
+}
+
+.form-status {
+    margin-top: 15px;
+
+    margin-bottom: 0;
+
+    color: #006400;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.site-footer {
+    background-color: #151515;
+
+    color: white;
+
+    padding: 30px 20px;
+}
+
+.footer-content {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.footer-content p {
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+    list-style: none;
+
+    margin: 0;
+
+    padding: 0;
+}
+
+.footer-links a {
+    color: white;
+
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   RTL SUPPORT
+========================= */
+
+html[dir="rtl"] body {
+    text-align: right;
+}
+
+html[dir="rtl"] .timeline {
+    direction: rtl;
+}
+
+html[dir="rtl"] .impact-card,
+html[dir="rtl"] .newsletter-form,
+html[dir="rtl"] .card-details p {
+    text-align: right;
+}
+
+html[dir="rtl"] .impact-icon {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+html[dir="rtl"] .footer-content {
+    direction: rtl;
 }
 
 
@@ -337,11 +695,9 @@ body {
         min-height: 240px;
     }
 
-
     .timeline-section {
         padding: 35px 30px 45px;
     }
-
 
     .timeline {
         max-width: 100%;
@@ -349,14 +705,12 @@ body {
         gap: 22px;
     }
 
-
     .timeline-card {
         flex: 0 0 280px;
 
         width: 280px;
         min-width: 280px;
     }
-
 
     .image-container {
         height: 170px;
@@ -376,28 +730,23 @@ body {
         padding: 30px 20px;
     }
 
-
     .hero h1 {
         font-size: 28px;
     }
-
 
     .hero p {
         font-size: 12px;
     }
 
-
     .timeline-section {
         padding: 30px 25px 45px;
     }
-
 
     .timeline {
         gap: 20px;
 
         padding: 15px 10px 30px;
     }
-
 
     .timeline-card {
         flex: 0 0 260px;
@@ -408,24 +757,40 @@ body {
         padding: 18px 16px 16px;
     }
 
-
     .timeline-card h2 {
         font-size: 19px;
     }
-
 
     .timeline-card h3 {
         font-size: 15px;
     }
 
-
     .image-container {
         height: 160px;
     }
 
-
     .card-details p {
         font-size: 13px;
+    }
+
+    .newsletter-content {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .newsletter-text {
+        text-align: center;
+    }
+
+    .footer-content {
+        justify-content: center;
+
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
     }
 }
 
@@ -441,7 +806,6 @@ body {
         padding-right: 20px;
     }
 
-
     .timeline-card {
         flex: 0 0 250px;
 
@@ -449,9 +813,20 @@ body {
         min-width: 250px;
     }
 
-
     .image-container {
         height: 155px;
+    }
+
+    .impact-section,
+    .faq-section,
+    .newsletter-section {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .section-heading h2,
+    .newsletter-text h2 {
+        font-size: 28px;
     }
 }
 
@@ -468,23 +843,19 @@ body {
         padding: 30px 25px;
     }
 
-
     .intel-logo {
         width: 65px;
     }
 
-
     .hero h1 {
         font-size: 26px;
     }
-
 
     .hero p {
         max-width: 400px;
 
         font-size: 12px;
     }
-
 
     .hero p br {
         display: none;
@@ -498,7 +869,6 @@ body {
     .timeline-section {
         padding: 30px 20px 40px;
     }
-
 
     .timeline {
         max-width: 100%;
@@ -529,30 +899,78 @@ body {
         padding: 20px;
     }
 
-
     .timeline-card h2 {
         font-size: 21px;
     }
-
 
     .timeline-card h3 {
         font-size: 17px;
     }
 
-
     .image-container {
         height: 220px;
     }
-
 
     .card-details p {
         font-size: 14px;
     }
 
-
     .timeline-instructions {
         margin-top: 20px;
 
         font-size: 12px;
+    }
+
+
+    /* =========================
+       PROJECT 3 MOBILE
+    ========================= */
+
+    .impact-section,
+    .faq-section,
+    .newsletter-section {
+        padding: 50px 20px;
+    }
+
+    .section-heading {
+        margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .impact-card {
+        padding: 25px;
+    }
+
+    .newsletter-content {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+    .newsletter-text {
+        text-align: center;
+    }
+
+    .newsletter-text h2 {
+        font-size: 27px;
+    }
+
+    .newsletter-form {
+        padding: 24px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .footer-links {
+        justify-content: center;
+
+        gap: 15px;
     }
 }
